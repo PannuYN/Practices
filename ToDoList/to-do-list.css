@@ -1,0 +1,46 @@
+#list { /* the whole list container */
+    width: 300px; /* define width and height to make it appear as a box even before adding any list to it */
+    height: 400px;
+    background-color: antiquewhite;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* only addin bottom shadow */
+    margin: 20px auto; /* 20px for top and bottom, center for left and right */
+    overflow-x: auto; /* add scrollbar */
+}
+
+#listItem { /* list rows in the container */
+    width: 300px;
+    display: flex; /* for layout of the items in it */
+    position: relative; /* for positioning remove button */
+    padding: 10px; /* add some space around the edges */
+    box-sizing: border-box; /* do not let padding ruin the format */
+}
+.listContent { /* elements in the row */
+    margin: 3px; /* add some space between checkbox and label */
+}
+.removeBtn {
+    position: absolute; /* for positioning all buttons at the same place */
+    right: 5px; /* 5px from right */
+}
+
+button {
+    background-color: chocolate;
+    color: white;
+    border: none;
+    padding: 5px; /* button size */
+}
+button:hover {
+    background-color: blanchedalmond;
+    color: black;
+}
+
+/* container of input box, add button, clear button layout */
+#container {
+    width: 300px;
+    margin: auto; /* place the whole container in the center */
+    display: flex; /* to justify its contents in the center of it */
+    justify-content: center;
+}
+.addList { /* input box, add button, clear button */
+    margin: 0 5px; /* add space between each other */
+}
+

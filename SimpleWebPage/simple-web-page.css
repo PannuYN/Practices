@@ -1,0 +1,29 @@
+span { /* decorate specific parts */
+    color: chocolate;
+    font-weight: bold;
+}
+
+img {
+    height: 300px; /* define height to avoid too large image */
+    display: block; /* take the whole row */
+    margin: auto; /* middle */
+    padding: 10px; /* some space around edges */
+}
+
+button {
+    background-color: greenyellow; 
+    display: block;
+    margin: 10px auto;
+    padding: 5px 3px; /* button size */
+}
+button:hover {
+    background-color: blanchedalmond;
+}
+
+#sentence {
+    display: none; /* hide the sentence before clicking the button */
+}
+.container { /* for styling the sentence since it does not work when style is changed directly in DOM */
+    display: flex;
+    justify-content: center;
+}
