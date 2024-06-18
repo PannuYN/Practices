@@ -1,3 +1,5 @@
+//the script is for adding new list, checking lists, removing specific lists and clearing all lists
+
 let items = []; //create an array for list item names
 
 //add button function
