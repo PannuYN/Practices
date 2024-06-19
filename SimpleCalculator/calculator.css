@@ -1,0 +1,27 @@
+.custom-btn {
+    font-size: 20px;
+}
+.custom-btn:hover {
+    background-color: white;
+    color: black;
+}
+.add-btn {
+    font-size: 25px;
+    background-color: cadetblue;
+    color: white;
+}
+
+.function-btn:hover {
+    background-color: white;
+    color: black;
+}
+
+.input-bar {
+    border: none;
+    font-size: 40px;
+    text-align: right;
+}
+
+.container {
+    border: solid black;
+}
