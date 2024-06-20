@@ -1,19 +1,15 @@
 .custom-btn {
     font-size: 20px;
 }
-.custom-btn:hover {
-    background-color: white;
-    color: black;
-}
 .add-btn {
     font-size: 25px;
     background-color: cadetblue;
     color: white;
 }
-
-.function-btn:hover {
+.custom-btn:hover, .function-btn:hover, .add-btn:hover {
     background-color: white;
     color: black;
+    border: 1px solid black;
 }
 
 .input-bar {
@@ -23,5 +19,19 @@
 }
 
 .container {
-    border: solid black;
+    border: 2px solid black;
 }
+
+.fixed-width {
+    width: 95%; /* Default width for small screens */
+}
+
+/* For screens larger than 400px */
+@media (min-width: 375px) {
+    .fixed-width {
+        width: 350px;
+    }
+}
+
+
+
