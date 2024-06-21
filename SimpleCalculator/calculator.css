@@ -1,5 +1,5 @@
 .custom-btn {
-    font-size: 20px;
+    font-size: 20px; /* make the text in button bigger */
 }
 .add-btn {
     font-size: 25px;
@@ -13,7 +13,7 @@
 }
 
 .input-bar {
-    border: none;
+    border: none; 
     font-size: 40px;
     text-align: right;
 }
