@@ -10,8 +10,8 @@ const filePath = fileURLToPath(import.meta.url); //the whole file path
 const directory = dirname(filePath); //directory of the file (which is the path which does not include that file name)
 const app = express(); //create express obj
 
-// Serve static files from the current directory
-//app.use(express.static(path.join(directory)));
+//Serve static files from the current directory (important for first run)
+app.use(express.static(path.join(directory)));
 
 //to display html page when the file is run
 app.get('/', (req, res) => {
