@@ -1,0 +1,13 @@
+.condition-css {
+    text-align: center;
+}
+
+body {
+    height: 100vh;
+    background-image: linear-gradient(rgb(155, 235, 208), rgb(81, 210, 224));
+}
+
+#check-weather:hover {
+    border: none;
+    background-color: white;
+}
