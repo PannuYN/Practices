@@ -4,10 +4,19 @@
 
 body {
     height: 100vh;
-    background-image: linear-gradient(rgb(155, 235, 208), rgb(81, 210, 224));
 }
 
 #check-weather:hover {
     border: none;
     background-color: white;
+}
+
+.hour-forecast-css {
+    overflow-y:hidden;
+    width: 350px;
+    height: auto;
+}
+
+p {
+    text-align: center;
 }

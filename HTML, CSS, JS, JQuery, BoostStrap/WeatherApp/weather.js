@@ -3,7 +3,7 @@ const comboBox = document.querySelector('#cities');
 
 const cities = ["Bangkok", "Yangon", "Mandalay", "Magway", "Chiang Mai"];
 
-function showCities() {
+async function welcomePage() {
     cities.map(city => {
         const cityName = city;
         const option = document.createElement('option');
@@ -11,8 +11,37 @@ function showCities() {
         option.textContent = cityName;
         comboBox.appendChild(option);
     })
+    const data = await fetchData("Bangkok", "forecast.json");
+    const location = document.createElement('p');
+    location.textContent = "Bangkok";
+
+    const temperature = document.createElement('h1');
+    temperature.classList.add("display-1", "text-center");
+    temperature.textContent = data.current.temp_f;
+
+    const condition = document.createElement('p');
+    condition.textContent = data.current.condition.text;
+
+    const hours = data.forecast.forecastday[0].hour;
+    const hourBtns = document.createElement('div');
+    hourBtns.classList.add("d-flex", "flex-row", "hour-forecast-css", "bg-success");
+    hours.map(hour => {
+        const container = document.createElement('div');
+        container.classList.add("w-25");
+        const forecast = hour.condition.text;
+        const time = document.createElement('p');
+        time.textContent = hour.time.split(" ")[1] + "\n" + forecast;
+        container.appendChild(time);
+        hourBtns.appendChild(container);
+    })
+
+    const section = document.querySelector('#weather-section');
+    section.appendChild(location);
+    section.appendChild(temperature);
+    section.appendChild(condition);
+    section.appendChild(hourBtns);
 }
-showCities();
+welcomePage();
 
 async function showData() {
     const selected_city = comboBox.value;
@@ -22,9 +51,8 @@ async function showData() {
 
     // Access the `hour` array
     const hours = data.forecast.forecastday[0].hour;
-    const currentTime = '2024-07-10 20:00';
+    const currentTime = '2024-07-12 20:00';
     const currentWeather = hours.find(hour => hour.time === currentTime);
-    console.log(currentWeather.condition.text);
 
     const condition = document.createElement('h3');
     condition.classList.add("condition-css");
@@ -33,7 +61,11 @@ async function showData() {
     const section = document.querySelector('#weather-section');
     const hourBtns = document.createElement('div');
     hourBtns.classList.add("d-flex");
-    hourBtns.classList.add("flex-wrap");
+
+    //pagination
+    const pagination = document.createElement('ul');
+    pagination.classList.add("pagination");
+
 
     //remove previous image inserted in the modal before inserting another
     while (section.firstChild) { //till there is a child
@@ -42,7 +74,7 @@ async function showData() {
 
     hours.map(hour => {
         const btn = document.createElement('button');
-        btn.classList.add("col-1");
+        btn.classList.add("btn", "btn-warning");
         btn.textContent = hour.time.split(" ")[1];
         hourBtns.appendChild(btn);
     })
@@ -58,4 +90,11 @@ async function fetchData(selected_city, weather_type) {
     const data = await response.json();
 
     return data;
+}
+
+function showPage(pageNo) {
+    const header = document.createElement('h1');
+    header.textContent = pageNo;
+    const section = document.querySelector("#weather-section");
+    section.appendChild(header);
 }
