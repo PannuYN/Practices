@@ -17,31 +17,57 @@ async function welcomePage() {
 
     const temperature = document.createElement('h1');
     temperature.classList.add("display-1", "text-center");
-    temperature.textContent = data.current.temp_f;
+    temperature.innerHTML = data.current.temp_f + "<sup>°</sup>";
 
     const condition = document.createElement('p');
+    condition.classList.add("display-6");
     condition.textContent = data.current.condition.text;
 
     const hours = data.forecast.forecastday[0].hour;
-    const hourBtns = document.createElement('div');
-    hourBtns.classList.add("d-flex", "flex-row", "hour-forecast-css", "bg-success");
+    const current_hour = new Date().toTimeString().split(":")[0];
+    const hour_section = document.createElement('div');
+    hour_section.classList.add("d-flex", "flex-row", "hour-forecast-css", "bg-transparent", "p-0", "m-2");
     hours.map(hour => {
         const container = document.createElement('div');
-        container.classList.add("w-25");
-        const forecast = hour.condition.text;
+        container.classList.add("col-3", "d-flex", "flex-column", "align-items-center");
+        const forecast = document.createElement('img');
+        forecast.src = "https:" + data.current.condition.icon;
+        forecast.classList.add("p-0", "m-0", "col-9", "al");
         const time = document.createElement('p');
-        time.textContent = hour.time.split(" ")[1] + "\n" + forecast;
+        time.classList.add("m-0");
+
+        const displayed_hour = hour.time.split(" ")[1];
+        if (current_hour == displayed_hour.split(":")[0]) {
+            time.innerHTML = "<b>Now</b>";
+        }
+        else {
+            time.textContent = displayed_hour;
+        }
         container.appendChild(time);
-        hourBtns.appendChild(container);
+        container.appendChild(forecast);
+        hour_section.appendChild(container);
     })
+
+    const displayed_date = data.forecast.forecastday[0].date;
+    const date = document.createElement('h3');
+    date.textContent = displayed_date;
 
     const section = document.querySelector('#weather-section');
     section.appendChild(location);
     section.appendChild(temperature);
     section.appendChild(condition);
-    section.appendChild(hourBtns);
+    section.appendChild(hour_section);
+    section.appendChild(date);
+
+    const date_picker = document.querySelector("#datepicker");
+    date_picker.classList.remove("d-none");
 }
 welcomePage();
+
+function showDate(){
+    const date_picker = document.querySelector("#datepicker");
+    console.log(date_picker.value);
+}
 
 async function showData() {
     const selected_city = comboBox.value;
@@ -59,8 +85,8 @@ async function showData() {
     condition.classList.add("display-5");
     condition.textContent = currentWeather.condition.text;
     const section = document.querySelector('#weather-section');
-    const hourBtns = document.createElement('div');
-    hourBtns.classList.add("d-flex");
+    const hour_section = document.createElement('div');
+    hour_section.classList.add("d-flex");
 
     //pagination
     const pagination = document.createElement('ul');
@@ -76,9 +102,9 @@ async function showData() {
         const btn = document.createElement('button');
         btn.classList.add("btn", "btn-warning");
         btn.textContent = hour.time.split(" ")[1];
-        hourBtns.appendChild(btn);
+        hour_section.appendChild(btn);
     })
-    section.appendChild(hourBtns);
+    section.appendChild(hour_section);
     section.appendChild(condition);
 }
 

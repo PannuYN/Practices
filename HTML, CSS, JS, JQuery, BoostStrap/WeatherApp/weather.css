@@ -12,11 +12,13 @@ body {
 }
 
 .hour-forecast-css {
-    overflow-y:hidden;
+    overflow: auto;
     width: 350px;
-    height: auto;
+}
+.hour-forecast-css::-webkit-scrollbar {
+    display: none;
 }
 
-p {
+p, h3 {
     text-align: center;
 }

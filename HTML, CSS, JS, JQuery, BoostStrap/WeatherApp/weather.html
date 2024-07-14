@@ -25,11 +25,12 @@
                 <button class="btn btn-warning col-12" id="check-weather" onclick="showData()">click</button>
             </div>
         </div>
-        <div class="container bg-secondary mt-5 py-2" style="width: 400px; height: 700px;">
+        <div class="container py-2 d-flex flex-column align-items-center" style="width: 400px; height: 700px;">
             <div class="display-6 text-center">Current Location</div>
             <div class="row d-flex justify-content-center" id="weather-section">
             
             </div>
+            <input type="date" class="d-none" id="datepicker" onchange="showDate()" />
         </div>
           
 
