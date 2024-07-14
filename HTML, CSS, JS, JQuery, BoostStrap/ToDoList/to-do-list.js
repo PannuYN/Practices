@@ -62,7 +62,7 @@ function displayList(listItems) {
         bt.textContent = "Remove";
         bt.classList.add('listContent');
         bt.classList.add('removeBtn');
-        bt.onclick = () => remove(bt.id); //pass the current index
+        bt.onclick = () => remove(bt.id); //pass the current index to remove
 
         //add elements in the container row
         row.appendChild(box);

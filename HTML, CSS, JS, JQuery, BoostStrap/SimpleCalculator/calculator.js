@@ -66,7 +66,7 @@ function calculate() {
                 
                 const subSolution = simpleCalculate(simpleExpression); //pass that sub-string to the simpleCalculate function to solve
                 splittedExpression.splice(operatorIndex - 1, 3); //remove the components of sub-expression from the array
-                splittedExpression.splice(operatorIndex - 1, 0, subSolution); //add solution got from the simpleCalculate function in their place
+                splittedExpression.splice(operatorIndex - 1, 0, subSolution); //add solution got from the simpleCalculate function in their place without affecting(removing) any other items
             }
         }
 
