@@ -1,24 +1,30 @@
-.condition-css {
-    text-align: center;
-}
-
-body {
-    height: 100vh;
-}
-
-#check-weather:hover {
+#check-weather:hover { /* for click button */
     border: none;
     background-color: white;
 }
 
 .hour-forecast-css {
-    overflow: auto;
-    width: 350px;
+    overflow: auto; /* scrollable box */
+    width: 350px; /* define width */
 }
-.hour-forecast-css::-webkit-scrollbar {
+
+.hour-forecast-css::-webkit-scrollbar { /* hide scrollbar */
     display: none;
 }
 
-p, h3 {
+p, h3 { /* align all texts in the center */
     text-align: center;
 }
+
+.fixed-width {
+    width: 95%; /* Default width for small screens */
+}
+
+/* For screens larger than 700px */
+@media (min-width: 700px) {
+    .fixed-width {
+        width: 600px;
+    }
+}
+
+
