@@ -64,6 +64,7 @@ async function specificLocation() {
     status.textContent = ""; //remove location status if there is since it is an error message for unavailability of current city
 
     const selected_city = comboBox.value; //get selected city from combo box
+    document.querySelector('#location-status').textContent = "Selected Location";
     showWeather(selected_city); //call function with selected city
 }
 
