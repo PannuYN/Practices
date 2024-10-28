@@ -1,0 +1,1 @@
+A warm-up as my first exercise in this project. A responsive web page with a header, a paragraph, a photo and a toggle button. The result screenshots can be found in "result-photos" folder.

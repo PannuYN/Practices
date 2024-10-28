@@ -1,0 +1,1 @@
+A simple to-do-list program with add, remove, mark-as-complete and clear-all features. The result screenshots can be found in "result-photos" folder.
