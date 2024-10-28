@@ -1,1 +1,3 @@
-I always get confused and unsure when it comes to responsive nav bar. So, I made one with fully documented code to make it clear. The result screenshots can be found in "result-photos" folder.
+I always get confused and unsure when it comes to responsive nav bar.
+So, I made one with fully documented code to make it clear.
+The result screenshots can be found in "result-photos" folder.

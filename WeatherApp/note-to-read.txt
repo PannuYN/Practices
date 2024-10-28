@@ -1,3 +1,7 @@
-A weather forecast program. There are five cities registered. If your current location is in those cities, it will automatically show the weather of your current city when it starts loading. Otherwise, it will show the weather of Paris. You can select the city you want to view.
+A weather forecast program.
+There are five cities registered.
+If your current location is in those cities, it will automatically show the weather of your current city when it starts loading.
+Otherwise, it will show the weather of Paris.
+You can select the city you want to view.
 
 You can scroll horizontally to see the weather condition of each hour through the whole day.
